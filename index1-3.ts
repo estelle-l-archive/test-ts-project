@@ -73,7 +73,7 @@ Average score >= 60: Grade "D"
 Average score < 60: Grade "F"
  */
 
-const calculateGrade = (student: Student) => {
+const calculateGrade = (student: Student) : string => {
   const avgScore: number = student.allScores.reduce((a, b) => (a + b)) / student.allScores.length;
   console.log(`${student.studentName}'s average score is ${avgScore}.`)
   console.log(`${student.studentName}'s attendance rate is ${student.attendance}%.`)
