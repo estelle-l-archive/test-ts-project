@@ -72,11 +72,12 @@ Average score < 60: Grade "F"
  */
 
 const calculateGrade = (student: Student) => {
-  const avgGrade: number = student.allScores.reduce((a, b) => (a + b)) / student.allScores.length;
-  if (avgGrade >= 90) return `${student.studentName} got an A.`;
-  else if (avgGrade >= 80) return `${student.studentName} got a B.`;
-  else if (avgGrade >= 70) return `${student.studentName} got a C.`;
-  else if (avgGrade >= 60) return `${student.studentName} got a D.`;
+  const avgScore: number = student.allScores.reduce((a, b) => (a + b)) / student.allScores.length;
+  console.log(`${student.studentName}'s average score is ${avgScore}.`)
+  if (avgScore >= 90) return `${student.studentName} got an A.`;
+  else if (avgScore >= 80) return `${student.studentName} got a B.`;
+  else if (avgScore >= 70) return `${student.studentName} got a C.`;
+  else if (avgScore >= 60) return `${student.studentName} got a D.`;
   return `${student} got an F.`
   }
 
