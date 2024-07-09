@@ -21,16 +21,20 @@ type Student = {
   isStudying: boolean;
   grade: number;
   id: symbol;
+  // (Added - Task 4)
+  allScores: number[];
 }
 
-let student1: Student = {
-  studentName: "Bubo De Bubis",
+let buboSomaro: Student = {
+  studentName: "Bubo Somaro",
   studentId: "0001",
   subjects: ["Philosophy", "Sociology", "Psychology"],
   // major: "Sociology";
   grade: 100,
   isStudying: true,
   id: Symbol("0001"),
+  // (Added - Task 4)
+  allScores: [100, 95, 45, 63, 27],
 }
 
 /* Task 3: Understand Scope (Local and Global)
@@ -40,7 +44,7 @@ let globalVar: string = "Hello, global scope!";
 
 function testFunction() {
   let localVar: string = "Hello, local scope!";
-  
+
   console.log(globalVar);
   console.log(localVar);
 }
@@ -50,3 +54,9 @@ testFunction();
 console.log(globalVar);
 
 // console.log(localVar);
+
+const calculateAvgGrade = (student: Student) => {
+  return student.allScores.reduce((a, b) => (a + b)) / student.allScores.length;
+}
+
+console.log(calculateAvgGrade(buboSomaro));
