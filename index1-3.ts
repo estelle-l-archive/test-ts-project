@@ -55,8 +55,29 @@ console.log(globalVar);
 
 // console.log(localVar);
 
-const calculateAvgGrade = (student: Student) => {
-  return student.allScores.reduce((a, b) => (a + b)) / student.allScores.length;
-}
+/* TASK 4
+Update the Student type with the property:
+allScores (number[]): An array of the student's scores.
+Implement a function calculateGrade: 
+The function should accept a Student object as its parameter.
+It should calculate the total score by summing up all the scores in the scores array.
+Compute the average score by dividing the total score by the number of scores.
+Return a grade based on the average score using the predefined criteria.
+The grade should be determined using the following criteria:
+Average score >= 90: Grade "A"
+Average score >= 80: Grade "B"
+Average score >= 70: Grade "C"
+Average score >= 60: Grade "D"
+Average score < 60: Grade "F"
+ */
 
-console.log(calculateAvgGrade(buboSomaro));
+const calculateGrade = (student: Student) => {
+  const avgGrade: number = student.allScores.reduce((a, b) => (a + b)) / student.allScores.length;
+  if (avgGrade >= 90) return `${student.studentName} got an A.`;
+  else if (avgGrade >= 80) return `${student.studentName} got a B.`;
+  else if (avgGrade >= 70) return `${student.studentName} got a C.`;
+  else if (avgGrade >= 60) return `${student.studentName} got a D.`;
+  return `${student} got an F.`
+  }
+
+console.log(calculateGrade(buboSomaro));
